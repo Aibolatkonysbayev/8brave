@@ -13,7 +13,6 @@ const HeroSection = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   position: 'relative',
   overflow: 'hidden',
-  paddingTop: '60px', // Account for fixed header
   '&::before': {
     content: '""',
     position: 'absolute',
