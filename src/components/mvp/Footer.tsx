@@ -35,8 +35,20 @@ const Footer: React.FC = () => {
                 The HackerRank for Oil & Gas Engineers - AI-powered skill assessment + learning ecosystem.
               </Typography>
               <Stack direction="row" spacing={2}>
-                <LinkedInIcon sx={{ cursor: 'pointer', '&:hover': { opacity: 0.7 }, fontSize: 28 }} />
-                <EmailIcon sx={{ cursor: 'pointer', '&:hover': { opacity: 0.7 }, fontSize: 28 }} />
+                <Link
+                  href="https://www.linkedin.com/in/aibolat-konysbayev-14a4709a/"
+                  color="inherit"
+                  target="_blank"
+                >
+                  <LinkedInIcon
+                    sx={{ cursor: 'pointer', '&:hover': { opacity: 0.7 }, fontSize: 28 }}
+                  />
+                </Link>
+                <Link href="mailto:aibolat.konysbayev@gmail.com" color="inherit">
+                  <EmailIcon
+                    sx={{ cursor: 'pointer', '&:hover': { opacity: 0.7 }, fontSize: 28 }}
+                  />
+                </Link>
               </Stack>
             </Box>
 
@@ -89,7 +101,7 @@ const Footer: React.FC = () => {
               </Typography>
               <Stack spacing={2}>
                 <Typography variant="body1" sx={{ opacity: 0.9, fontWeight: 500 }}>
-                  hello@8brave.com
+                  aibolat.konysbayev@gmail.com
                 </Typography>
                 <Typography variant="body1" sx={{ opacity: 0.9, fontWeight: 500 }}>
                   Pre-Seed Stage

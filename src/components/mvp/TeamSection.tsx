@@ -69,7 +69,7 @@ const TeamSection: React.FC = () => {
       avatar: '/images/team/aibolat.jpg',
       bio: '14 years in Oil & Gas, founder of Advanced People (300+ engineers trained)',
       expertise: ['Oil & Gas Operations', 'Engineering Training', 'Product Management', 'Agile Certified'],
-      linkedin: '#'
+      linkedin: 'https://www.linkedin.com/in/aibolat-konysbayev-14a4709a/'
     }
   ];
 

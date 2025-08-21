@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import { ThemeProvider, CssBaseline, Box, Toolbar } from '@mui/material';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import theme from './theme/theme';
@@ -127,8 +127,9 @@ const App: React.FC = () => {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', pt: '60px' }}>
+        <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
           <Header onReset={currentState !== AppState.MVP_LANDING ? handleReset : undefined} />
+          <Toolbar />
           {renderCurrentState()}
         </Box>
       </ThemeProvider>
