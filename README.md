@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# 8Brave Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-ready landing page for the 8Brave skill assessment platform. Built with Next.js 14 App Router and TypeScript.
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open `http://localhost:3000` in your browser.
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+## Environment variables
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
+The API can send email notifications when these are configured:
+
 ```
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=
+SMTP_PASS=
+```
+
+If any SMTP variables are missing, signups are still stored locally and the API returns success.
+
+## Whitelist storage
+
+Signup data is appended to `data/whitelist.json`. Each entry includes the email, optional experience, timestamp, and IP address. The API validates email format, checks experience values, and applies a simple in-memory rate limit per IP.
+
+## Deployment (Vercel)
+
+1. Push the repository to GitHub.
+2. Create a new Vercel project and import the repository.
+3. Add the SMTP environment variables in Vercel (optional).
+4. Deploy. Vercel will run `npm run build` automatically.
+
+## Updating copy
+
+All user-facing copy, including the EN/RU translations, lives in `app/page.tsx` inside the `COPY` object.
